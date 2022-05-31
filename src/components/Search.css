@@ -1,0 +1,75 @@
+.beer-div {
+    border: 1px solid rgba(209, 209, 214, 0.7);
+    border-radius: 0.25rem;
+    box-shadow: 0.125rem 0.125rem 0.5rem rgba(65, 132, 234, 0.75);
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(209, 209, 214, 0.7);
+    max-width: 700px;
+    color: dodgerblue;
+}
+
+.search-div {
+    display: flex;
+}
+
+.App {
+    max-width: 100rem;
+    width: 100%;
+    min-height: 50rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.bn632-hover {
+    width: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    height: 35px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.bn632-hover:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+    outline: none;
+}
+
+.bn632-hover.bn26 {
+    background-image: linear-gradient(
+            to right,
+            #25aae1,
+            #4481eb,
+            #04befe,
+            #3f86ed
+    );
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+input {
+    height: 30px;
+    width: 250px;
+    border: dodgerblue;
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+    outline-color: rgba(65, 132, 234, 0.75);
+    border-radius: 50px;
+    color: dodgerblue;
+    text-align: center;
+}

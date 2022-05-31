@@ -1,10 +1,18 @@
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+} from "react-router-dom";
 import './App.css';
+import Search from "./components/Search";
 
 function App() {
   return (
-    <div className="App">
-      <h1>sdf</h1>
-    </div>
+      <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Search/>}></Route>
+          </Routes>
+      </BrowserRouter>
   );
 }
 
