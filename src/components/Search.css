@@ -4,9 +4,14 @@
     box-shadow: 0.125rem 0.125rem 0.5rem rgba(65, 132, 234, 0.75);
     padding: 10px;
     margin: 10px;
-    background-color: rgba(209, 209, 214, 0.7);
+    background-color: rgba(240, 240, 240, 0.95);
     max-width: 700px;
     color: dodgerblue;
+}
+
+.beer-div > h1 {
+    display: flex;
+    justify-content: center;
 }
 
 .search-div {
@@ -25,20 +30,24 @@
 }
 
 .bn632-hover {
-    width: 50px;
+    width: 70px;
     font-size: 1rem;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
     margin: 10px;
     height: 35px;
-    text-align:center;
+    text-align: center;
     border: none;
     background-size: 300% 100%;
     border-radius: 50px;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
+}
+
+.return-container {
+    text-align: center;
 }
 
 .bn632-hover:hover {
@@ -72,4 +81,12 @@ input {
     border-radius: 50px;
     color: dodgerblue;
     text-align: center;
+}
+
+.beer-img {
+    width: 20%;
+    height: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

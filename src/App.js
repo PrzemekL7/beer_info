@@ -11,6 +11,7 @@ function App() {
       <BrowserRouter>
           <Routes>
             <Route path="/" element={<Search/>}></Route>
+            <Route path="/beer" element={<div>dupa</div>}></Route>
           </Routes>
       </BrowserRouter>
   );

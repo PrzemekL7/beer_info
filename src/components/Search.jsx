@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
+import bottle from "./../images/bottle.png"
 import "./Search.css"
+import {Link} from "react-router-dom";
 
 function Search() {
     const [value, setValue] = useState("")
@@ -31,9 +33,7 @@ function Search() {
                 <label htmlFor="search">
                 </label>
                 <input type="text" id="search" value={value} placeholder="Search..." onChange={handleSearch}/>
-                <a href="/">
-                    <button className="bn632-hover bn26" onSubmit={handleSubmit}>Go</button>
-                </a>
+                <button className="bn632-hover bn26">Go</button>
             </form>
 
             <div>
@@ -45,11 +45,16 @@ function Search() {
                             <h1>{beer.name}</h1>
                             {beer.image_url ? (
                                 <img
+                                    className="beer-img"
                                     src={`https://images.punkapi.com/v2/${beer.id}.png`}
                                     alt={`poster of ${beer.name}`}
                                 ></img>
                             ) : (
-                                <h2>Something went wrong</h2>
+                                <img
+                                    className="beer-img"
+                                    src={bottle}
+                                    alt={`poster of ${beer.name}`}
+                                ></img>
                             )}
                             <h2>Description:</h2>
                             <p>{beer.description}</p>
@@ -57,6 +62,12 @@ function Search() {
                             <p>{beer.food_pairing.join(', ')}</p>
                             <h2>Brewers tips:</h2>
                             <p>{beer.brewers_tips}</p>
+                            <div className="return-container">
+                            <Link
+                                to={`/beer/${beer.id}`}>
+                                <button className="bn632-hover bn26">details</button>
+                            </Link>
+                            </div>
                             {/*<div>{Object.keys(beer.ingredients).map((ingredient) => (*/}
                             {/*    <div>{ingredient}</div>*/}
                             {/*))}</div>*/}
