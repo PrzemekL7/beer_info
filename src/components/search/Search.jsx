@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import bottle from "./../images/bottle.png"
+import bottle from "../../images/bottle.png"
 import "./Search.css"
 import {Link} from "react-router-dom";
 
@@ -58,10 +58,6 @@ function Search() {
                             )}
                             <h2>Description:</h2>
                             <p>{beer.description}</p>
-                            <h2>Food pairing:</h2>
-                            <p>{beer.food_pairing.join(', ')}</p>
-                            <h2>Brewers tips:</h2>
-                            <p>{beer.brewers_tips}</p>
                             <div className="return-container">
                             <Link
                                 to={`/beer/${beer.id}`}>
