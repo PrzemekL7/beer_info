@@ -18,7 +18,7 @@ function Details() {
         const response = await fetch(`https://api.punkapi.com/v2/beers?ids=${id}`)
 
         if (response.status !== 200) {
-            throw new Error('Something is no yes')
+            throw new Error('Something went wrong')
         }
         const data = await response.json()
         return data
@@ -29,39 +29,39 @@ function Details() {
             {
                 beer ? (
                     <div>
-                        {beer.map((beer) => (
+                        {beer.map(({id, name, image_url, tagline, contributed_by, abv, ibu, attenuation_level, ebc, srm, ph, brewers_tips, food_pairing}) => (
                                 <div
                                     className="beer-div"
-                                    key={beer.id}
+                                    key={id}
                                 >
-                                    <h1>{beer.name}</h1>
-                                    {beer.image_url ? (
+                                    <h1>{name}</h1>
+                                    {image_url ? (
                                         <img
                                             className="beer-img"
-                                            src={`https://images.punkapi.com/v2/${beer.id}.png`}
-                                            alt={`poster of ${beer.name}`}
+                                            src={`https://images.punkapi.com/v2/${id}.png`}
+                                            alt={`poster of ${name}`}
                                         ></img>
                                     ) : (
                                         <img
                                             className="beer-img"
                                             src={bottle}
-                                            alt={`poster of ${beer.name}`}
+                                            alt={`poster of ${name}`}
                                         ></img>
                                     )}
                                     <h2>Tagline:</h2>
-                                    <p>{`"${beer.tagline}"`}</p>
+                                    <p>{`"${tagline}"`}</p>
                                     <h2>Description:</h2>
                                     <p>{beer.description}</p>
                                     <h2>Contributed by:</h2>
-                                    <p>{beer.contributed_by}</p>
+                                    <p>{contributed_by}</p>
                                     <h2>Details:</h2>
-                                    <p>abv: {beer.abv}, ibu: {beer.ibu}, attenuation level: {beer.attenuation_level},
-                                        ebc: {beer.ebc}, srm: {beer.srm}, ph: {beer.ph}
+                                    <p>abv: {abv}, ibu: {ibu}, attenuation level: {attenuation_level},
+                                        ebc: {ebc}, srm: {srm}, ph: {ph}
                                     </p>
                                     <h2>Brewers tips:</h2>
-                                    <p>{beer.brewers_tips}</p>
+                                    <p>{brewers_tips}</p>
                                     <h2>Food pairing:</h2>
-                                    <p>{beer.food_pairing.join(', ')}</p>
+                                    <p>{food_pairing.join(', ')}</p>
                                     <div className="return-container">
                                         <Link
                                             to="/">

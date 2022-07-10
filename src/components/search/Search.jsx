@@ -25,6 +25,7 @@ function Search() {
     function handleSubmit(event) {
         event.preventDefault();
         getBeerData(value).then((data) => setBeers(data))
+        setValue("")
     }
 
     return (
@@ -64,9 +65,6 @@ function Search() {
                                 <button className="bn632-hover bn26">details</button>
                             </Link>
                             </div>
-                            {/*<div>{Object.keys(beer.ingredients).map((ingredient) => (*/}
-                            {/*    <div>{ingredient}</div>*/}
-                            {/*))}</div>*/}
                         </div>
                     )
                 )}
