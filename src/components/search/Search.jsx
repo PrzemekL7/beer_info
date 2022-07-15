@@ -12,7 +12,7 @@ function Search() {
         const response = await fetch(`https://api.punkapi.com/v2/beers?beer_name=${query}`)
 
         if (response.status !== 200) {
-            throw new Error('Something is no yes')
+            throw new Error('Something went wrong')
         }
         const data = await response.json()
         return data
@@ -38,30 +38,30 @@ function Search() {
             </form>
 
             <div>
-                {beers.map((beer) => (
+                {beers.map(({id, name, image_url, description}) => (
                         <div
                             className="beer-div"
-                            key={beer.id}
+                            key={id}
                         >
-                            <h1>{beer.name}</h1>
-                            {beer.image_url ? (
+                            <h1>{name}</h1>
+                            {image_url ? (
                                 <img
                                     className="beer-img"
-                                    src={`https://images.punkapi.com/v2/${beer.id}.png`}
-                                    alt={`poster of ${beer.name}`}
+                                    src={`https://images.punkapi.com/v2/${id}.png`}
+                                    alt={`poster of ${name}`}
                                 ></img>
                             ) : (
                                 <img
                                     className="beer-img"
                                     src={bottle}
-                                    alt={`poster of ${beer.name}`}
+                                    alt={`poster of ${name}`}
                                 ></img>
                             )}
                             <h2>Description:</h2>
-                            <p>{beer.description}</p>
+                            <p>{description}</p>
                             <div className="return-container">
                             <Link
-                                to={`/beer/${beer.id}`}>
+                                to={`/beer/${id}`}>
                                 <button className="bn632-hover bn26">details</button>
                             </Link>
                             </div>
