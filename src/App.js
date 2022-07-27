@@ -1,3 +1,4 @@
+import Favicon from "react-favicon";
 import {
     BrowserRouter,
     Routes,
@@ -10,6 +11,7 @@ import Details from "./components/details/Details";
 function App() {
     return (
         <BrowserRouter>
+            <Favicon url="./images/favicon.png"></Favicon>
             <Routes>
                 <Route path="/" element={<Search/>}></Route>
                 <Route path="/beer/:id" element={<Details/>}></Route>
