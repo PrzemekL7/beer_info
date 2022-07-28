@@ -8,6 +8,6 @@
 
 
 ## How to run:
-- `git clone https://github.com/PrzemekL7/weather_app.git`
+- `git clone https://github.com/PrzemekL7/beer_info.git`
 - `npm i`
 - `npm start`
